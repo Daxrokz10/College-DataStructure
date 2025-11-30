@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    const s = " Hello World! ";
+
+// length
+console.log(s.length);            // 13 (counts all characters)
+
+// trim — remove leading/trailing spaces
+console.log(s.trim());            // "Hello World!"
+
+// toUpperCase / toLowerCase
+console.log(s.toUpperCase());     // " HELLO WORLD! "
+console.log(s.toLowerCase());     // " hello world! "
+
+// indexOf / lastIndexOf
+console.log(s.indexOf("o"));      // 5 (first 'o')
+console.log(s.lastIndexOf("o"));  // 7 (last 'o')
+
+// slice / substring
+console.log(s.slice(1,6));        // "Hello" (start inclusive, end exclusive)
+console.log(s.substring(1,6));    // "Hello" (similar to slice for positive indices)
+
+// replace / replaceAll
+console.log(s.replace("l","L"));  // replaces first "l" -> " HeLlo World! "
+console.log(s.replaceAll("l","L")); // replaces all "l" (ES2021+)
+
+// split — turn into array
+console.log(s.trim().split(" ")); // ["Hello","World!"]
+
+// includes / startsWith / endsWith
+console.log(s.includes("World")); // true
+console.log(s.startsWith(" "));   // true (because s begins with a space)
+console.log(s.endsWith("! "));    // false (note trailing space)
+
+// charAt / charCodeAt
+console.log(s.charAt(1));         // "H"
+console.log(s.charCodeAt(1));     // ASCII/Unicode code of 'H'
+
+</script>
+</html>

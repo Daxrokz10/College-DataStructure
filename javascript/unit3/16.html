@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    #box {
+      width: 200px;
+      height: 120px;
+      background: lightgray;
+      line-height: 120px;
+      text-align: center;
+      margin: 20px;
+    }
+  </style>
+</head>
+<body>
+<div id="box">Hover me</div>
+
+<script>
+const box = document.getElementById("box");
+const original = box.style.background;
+
+box.addEventListener("mouseover", function() {
+  box.style.background = "lightgreen"; // change color when mouse enters
+});
+
+box.addEventListener("mouseout", function() {
+  box.style.background = original || "lightgray"; // restore original when mouse leaves
+});
+</script>
+</body>
+</html>

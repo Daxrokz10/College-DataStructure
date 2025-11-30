@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+<input id="txt" type="text" placeholder="Type here...">
+<p>Output: <span id="out"></span></p>
+
+<script>
+const input = document.getElementById("txt");
+const out = document.getElementById("out");
+
+// Option A: convert displayed text to uppercase (keeps the typed characters intact)
+input.addEventListener("keyup", function() {
+  out.textContent = input.value.toUpperCase();  
+});
+
+// Option B: convert the actual input value to uppercase as you type
+// input.addEventListener("keyup", function() {
+//   input.value = input.value.toUpperCase();
+// });
+</script>
+</body>
+</html>
