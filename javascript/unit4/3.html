@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <span>Answer: <h1 id="res" ></h1> </span>
+</body>
+<script>
+    let res = document.getElementById('res')
+    let num1 = parseFloat(prompt("Enter num 1:"));
+    let num2 = parseFloat(prompt("Enter num 2:"));
+    function addNum(num1,num2){
+        let sum = num1 + num2;
+        return sum;
+    }
+    let ans = addNum(num1,num2);
+    res.innerText = ans; 
+
+</script>
+</html>

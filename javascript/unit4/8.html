@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validation</title>
+
+    <style>
+        .error {
+            color: red;
+            font-size: 14px;
+        }
+        input {
+            display: block;
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Form Validation</h2>
+
+<form id="myForm">
+    <label>Name:</label>
+    <input type="text" id="name">
+    <span class="error" id="nameErr"></span>
+
+    <label>Email:</label>
+    <input type="text" id="email">
+    <span class="error" id="emailErr"></span>
+
+    <label>Mobile Number:</label>
+    <input type="text" id="mobile">
+    <span class="error" id="mobileErr"></span>
+
+    <button type="submit">Submit</button>
+</form>
+
+<script>
+    document.getElementById("myForm").addEventListener("submit", function (e) {
+        e.preventDefault(); // stop form submit
+
+        let name = document.getElementById("name").value.trim();
+        let email = document.getElementById("email").value.trim();
+        let mobile = document.getElementById("mobile").value.trim();
+
+        let valid = true;
+
+        // Clear old errors
+        document.getElementById("nameErr").innerText = "";
+        document.getElementById("emailErr").innerText = "";
+        document.getElementById("mobileErr").innerText = "";
+
+        // Name validation (only letters)
+        if (!/^[A-Za-z ]+$/.test(name)) {
+            document.getElementById("nameErr").innerText = "Invalid name (letters only)";
+            valid = false;
+        }
+
+        // Email validation
+        if (!/^\S+@\S+\.\S+$/.test(email)) {
+            document.getElementById("emailErr").innerText = "Invalid email format";
+            valid = false;
+        }
+
+        // Mobile validation (10 digits)
+        if (!/^[0-9]{10}$/.test(mobile)) {
+            document.getElementById("mobileErr").innerText = "Invalid mobile number (10 digits)";
+            valid = false;
+        }
+
+        if (valid) {
+            alert("Form submitted successfully!");
+        }
+    });
+</script>
+
+</body>
+</html>
